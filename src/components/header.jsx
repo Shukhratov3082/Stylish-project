@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Wrapper>
             <h1 className="Logo">Logo</h1>
-            <nav>
+            <nav className="navContainer">
                 <NavLinks to={'/'}>Home</NavLinks>
                 <NavLinks to={'/About'}>About</NavLinks>
                 <NavLinks to={'/Code'}>Code</NavLinks>
@@ -34,13 +34,13 @@ const Wrapper = styled.div`
         font-size: 40px;
     }
 
-    nav{
+    .navContainer{
         display: flex;
         gap: 10px;
         align-content: center;
     }
     @media (max-width:768px) {
-        nav{
+        .navContainer{
             display: none;
         }
      }

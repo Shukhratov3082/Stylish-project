@@ -4,11 +4,11 @@ import styled from 'styled-components';
 
 const MenuBurger = () => {
 
-    const [burger_class, setBurgerClass] = useState('burger-bar ')
+    const [burger_class, setBurgerClass] = useState('burger-bar')
     const [menu_class, setMenuClass] = useState('menu hidden')
-    const [isMenuClicked, setIsMenuClicked] = useState(false)
+    const [isMenuClicked, setIsMenuClicked] = useState(true)
 
-    const upDateMenu = () => {
+    function upDateMenu  () {
         if (isMenuClicked) {
             setBurgerClass('burger-bar clicked')
             setMenuClass('menu visible')
@@ -21,12 +21,14 @@ const MenuBurger = () => {
     }
     return (
         <Wrapper >
-            <div className='burger-menu' onClick={upDateMenu}>
-                <div className={burger_class} ></div>
-                <div className={burger_class} ></div>
-                <div className={burger_class} ></div>
+           
+                <div className='burger-menu' onClick={upDateMenu}>
+                    <div className={burger_class} ></div>
+                    <div className={burger_class} ></div>
+                    <div className={burger_class} ></div>
 
-            </div>
+                </div>
+        
             <div className={menu_class}>
                 <nav>
                     <NavLinks className={'NavLinks'} to={'/'}>Home</NavLinks>
@@ -84,6 +86,8 @@ const Wrapper = styled.div`
      nav{
         width: 100%;
         height: 100%;
+        background-color: #051c34;
+        border-radius: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
