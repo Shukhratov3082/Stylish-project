@@ -7,7 +7,7 @@ import { FaCode } from 'react-icons/fa'
 const FootNavBar = () => {
     return (
         <Wrapper>
-            <a href="#"> <IoHome className='Icon IconHome' /></a>
+            <a href="#home"> <IoHome className='Icon IconHome' /></a>
             <a href="#about"> <FcAbout className='Icon' /></a>
             <a href="#code"><FaCode className='Icon' /></a>
 
