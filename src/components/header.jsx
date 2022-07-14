@@ -8,7 +8,7 @@ const Header = () => {
         <Wrapper>
             <h1 className="Logo">Logo</h1>
             <nav className="navContainer">
-                <a  href={'#home'} onClick={() => setActiveNav('#')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
+                <a  href={'#home'} onClick={() => setActiveNav('#home')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
                 <a  href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
                 <a  href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
             </nav>
