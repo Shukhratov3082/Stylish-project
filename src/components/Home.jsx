@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Spline from '@splinetool/react-spline';
 
 const Home = () => {
+
+
     return (
         <Wrapper id='home'>
             <h2>Home</h2>
@@ -19,13 +20,10 @@ display: flex;
 position: relative;
 align-items: center;
 justify-content: center;
-background-color: yellow;
-z-index: 1;
-.Spline{
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    left: 0;
-}
+background-color: #838357;
+text-align: center;
+
+
+
     
 `

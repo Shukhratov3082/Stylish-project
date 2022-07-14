@@ -8,7 +8,7 @@ const Header = () => {
         <Wrapper>
             <h1 className="Logo">Logo</h1>
             <nav className="navContainer">
-                <a  href={'#'} onClick={() => setActiveNav('#')} className={activeNav === '#' ? 'active' : ''}>Home</a>
+                <a  href={'#home'} onClick={() => setActiveNav('#')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
                 <a  href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
                 <a  href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
             </nav>
@@ -28,6 +28,7 @@ const Wrapper = styled.div`
     background-color: black;
     justify-content: space-between;
     position: sticky;
+    z-index: 5;
     top: 0;
     left: 0;
     padding: 20px 80px 20px 50px;
