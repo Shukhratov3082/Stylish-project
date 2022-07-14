@@ -1,16 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import styled from "styled-components";
 import MenuBurger from "./MenuBurger";
 
-
 const Header = () => {
+    const [activeNav, setActiveNav] = useState('#')
     return (
         <Wrapper>
             <h1 className="Logo">Logo</h1>
             <nav className="navContainer">
-                <NavLinks to={'/'}>Home</NavLinks>
-                <NavLinks to={'/About'}>About</NavLinks>
-                <NavLinks to={'/Code'}>Code</NavLinks>
+                <a  href={'#'} onClick={() => setActiveNav('#')} className={activeNav === '#' ? 'active' : ''}>Home</a>
+                <a  href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
+                <a  href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
             </nav>
             <MenuBurger />
         </Wrapper>
@@ -27,6 +27,9 @@ const Wrapper = styled.div`
     border-bottom: 2px solid black;
     background-color: black;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
     padding: 20px 80px 20px 50px;
 
     .Logo{
@@ -38,6 +41,24 @@ const Wrapper = styled.div`
         display: flex;
         gap: 10px;
         align-content: center;
+        a{
+            transition: .3s ease-in-out;
+            text-decoration: none;
+            color: white;
+            font-size: 26px;
+            padding: 6px 1rem;
+            height: 100%;
+            cursor: pointer;
+            border-radius: 20px;
+     &.active{
+         color: #01afff;
+         background: linear-gradient(180deg,rgba(255,255,255,0) 80%,rgb(9 106 246 / 40%) 99%);
+         border-bottom: 2px solid #001cee;            
+     } 
+     &:hover{
+        transform: translateY(-2px);
+     }
+        }
     }
     @media (max-width:768px) {
         .navContainer{
@@ -48,22 +69,3 @@ const Wrapper = styled.div`
 
 `
 
-const NavLinks = styled(NavLink)`
-    transition: .3s ease-in-out;
-    text-decoration: none;
-    color: white;
-    font-size: 26px;
-    padding: 6px 1rem;
-    height: 100%;
-    cursor: pointer;
-    border-radius: 20px;
-     &.active{
-         color: #01afff;
-         background: linear-gradient(180deg,rgba(255,255,255,0) 80%,rgb(9 106 246 / 40%) 99%);
-         border-bottom: 2px solid #001cee;            
-     } 
-     &:hover{
-        transform: translateY(-2px);
-     }
-     
-`

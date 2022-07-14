@@ -1,18 +1,21 @@
-import { Routes, Route } from 'react-router-dom'
+
 import Home from './components/Home'
 import About from './components/About'
 import Code from './components/Code'
 import Header from './components/header';
+import FootNavBar from './components/FootNavBar';
+// import NavBar from './components/NavBar';
 
 function App() {
   return (
     <>
     <Header/>
-    <Routes>
-      <Route element={<Home/>} path='/' />
-      <Route element={<About/>} path='/About' />
-      <Route element={<Code/>} path='/Code' />
-    </Routes>
+    
+    {/* <NavBar/> */}
+    <Home/>
+    <About/>
+    <Code/>
+    <FootNavBar/>
     </>
   );
 }

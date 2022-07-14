@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 const Code = () => {
     return (
-        <Wrapper>
+        <Wrapper id='code'>
             <h2>Code</h2>
         </Wrapper>
     );
@@ -15,5 +15,6 @@ height: 800px;
 display: flex;
 align-items: center;
 justify-content: center;
+background-color: blue;
     
 `

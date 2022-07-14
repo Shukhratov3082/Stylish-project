@@ -62,6 +62,18 @@ const Wrapper = styled.div`
         transition: .5s cubic-bezier(0.12, 0.31, 0.61, 1);
         border: 1px solid black;
         background-color: #032141;
+
+        nav{
+        width: 100%;
+        height: 100%;
+        background-color: #051c34;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+     }
+     
     }
     .hidden{
         transform: translateX(-400px);
@@ -83,17 +95,7 @@ const Wrapper = styled.div`
         display: block;
      }
 
-     nav{
-        width: 100%;
-        height: 100%;
-        background-color: #051c34;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    
-     }
+
        
     
 

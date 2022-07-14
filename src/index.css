@@ -1,7 +1,22 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  background-color: rgb(56, 46, 142);
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 247, 202);
+  border-radius: 6px;
+
 }
 
 body {
