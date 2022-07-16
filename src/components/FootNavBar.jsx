@@ -1,16 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FcAbout } from 'react-icons/fc'
-import { IoHome } from 'react-icons/io5'
+import { FcHome } from 'react-icons/fc'
 import { FaCode } from 'react-icons/fa'
+import './Home';
+import './Code';
+import './About';
 
 const FootNavBar = () => {
-    return (
-        <Wrapper>
-            <a href="#home"> <IoHome className='Icon IconHome' /></a>
-            <a href="#about"> <FcAbout className='Icon' /></a>
-            <a href="#code"><FaCode className='Icon' /></a>
 
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('footer');
+
+        header.classList.toggle('FootShow', window.scrollY > 80);
+    })
+
+
+
+
+    return (
+        <Wrapper >
+            <footer>
+                <a href="#home"> <FcHome className='Icon FcHome' /> </a>
+                <a href="#about"> <FcAbout className='Icon' /></a>
+                <a href="#code"><FaCode className='Icon' /></a>
+            </footer>
         </Wrapper>
     );
 }
@@ -18,33 +32,47 @@ const FootNavBar = () => {
 export default FootNavBar;
 
 const Wrapper = styled.div`
-    position: fixed;
-    left: 50%;
-    bottom: 2rem;
-    background-color: rgba(0,0,0,0.3);
+footer{
     width: 200px;
     display: flex;
-    justify-content: space-between;
+    position: fixed;
+    left: 50%;
+    transition:  .3s ease-in-out;
     padding: 0.7rem 1.7rem;
-    z-index: 2;
+    justify-content: space-between;
     transform: translateX(-50%);
     gap: 0.8rem;
+    background-color: rgba(0,0,0,0.3);
     border-radius: 3rem;
     backdrop-filter: blur(15px);
+    bottom: -4rem;
+    z-index: 10;
+    
     a{
         width: 30px;
         height: 30px;
-       .Icon{
+ 
+        .Icon{
+           transition:  .3s cubic-bezier(0.42, 0, 0.38, 1.53);
            font-size: 30px;
-           color: #00fd2b;
-           &IconHome{
-            color: red;
-           }
-
+           color: #fcfcfc;
+         
+          &:hover{
+            transform: translateY(-6px);
+          }
           &:active{
-            color: black;
+            filter: blur(2px);
           }
         }
 
     }
+   
+    
+}
+    .FootShow{
+            bottom: 2rem;
+            
+    }
+
+
 `

@@ -2,36 +2,50 @@ import { useState } from "react";
 import styled from "styled-components";
 import MenuBurger from "./MenuBurger";
 
+
 const Header = () => {
-    const [activeNav, setActiveNav] = useState('#')
+    const [activeNav, setActiveNav] = useState('')
+    
+    //headerScroll background
+    // window.addEventListener('scroll', function () {
+    //     const header = document.querySelector('h1');
+    //     header.classList.toggle('headerScroll', window.scrollY > 823);
+    // })
+
+   
+
+
+    
+
     return (
         <Wrapper>
+
             <h1 className="Logo">Logo</h1>
             <nav className="navContainer">
-                <a  href={'#home'} onClick={() => setActiveNav('#home')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
-                <a  href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
-                <a  href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
+                <a href={'#home'} onClick={() => setActiveNav('#home')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
+                <a href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
+                <a href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
             </nav>
             <MenuBurger />
+
         </Wrapper>
     );
 }
 
 export default Header;
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
     width: 100%;
     height: 100px;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid black;
-    background-color: black;
     justify-content: space-between;
-    position: sticky;
+    position: absolute;
     z-index: 5;
     top: 0;
     left: 0;
-    padding: 20px 80px 20px 50px;
+    padding: 20px 50px 20px 50px;
+
 
     .Logo{
         color: white;

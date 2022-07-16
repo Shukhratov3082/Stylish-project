@@ -13,10 +13,21 @@ export default About;
 const Wrapper = styled.section`
 width: 100%;
 height: 800px;
+z-index: 2;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: gray;
+background: #131121;
+
+&::before{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #131121,transparent);
+    z-index: 10;
+}
 
 
     
