@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Fade from 'react-reveal/Fade';
 import telegram from './images/telegram.png'
 const About = () => {
 
@@ -22,9 +21,7 @@ const About = () => {
     return (
         <Wrapper id='about'>
 
-            <Fade bottom>
-                <h2>About</h2>
-            </Fade>
+                <h2 data-aos="fade-top">About</h2>
 
             <div className='aboutSite'>
                 <div className='textLeft' >
