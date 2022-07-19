@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import MenuBurger from "./MenuBurger";
-import Fade from 'react-reveal/Fade';
+
 
 const Header = () => {
     const [activeNav, setActiveNav] = useState('')
@@ -19,16 +19,14 @@ const Header = () => {
 
     return (
         <Wrapper>
-            <Fade top cascade>
                 <div className="borderGradiend">
-                    <h1 className="Logo">Shukhratov</h1>
+                    <h1 data-aos="fade-top" className="Logo">Shukhratov</h1>
                 </div>
-                <nav className="navContainer">
+                <nav className="navContainer"  data-aos="fade-bottom">
                     <a href={'#home'} onClick={() => setActiveNav('#home')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
                     <a href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
                     <a href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
                 </nav>
-            </Fade>
             <MenuBurger />
 
         </Wrapper>
