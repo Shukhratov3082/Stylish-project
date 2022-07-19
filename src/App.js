@@ -4,20 +4,22 @@ import About from './components/About'
 import Code from './components/Code'
 import Header from './components/header';
 import FootNavBar from './components/FootNavBar';
-// import NavBar from './components/NavBar';
+import styled from 'styled-components';
 
 function App() {
   return (
-    <>
-    <Header/>
-    
-    {/* <NavBar/> */}
-    <Home/>
-    <About/>
-    <Code/>
-    <FootNavBar/>
-    </>
+    <Wrapper>
+      <Header />
+      <Home />
+      <About />
+      <Code />
+      <FootNavBar />
+    </Wrapper>
   );
 }
 
 export default App;
+const Wrapper = styled.div`
+scroll-snap-type: y mandatory;
+  
+`

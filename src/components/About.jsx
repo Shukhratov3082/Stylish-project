@@ -1,10 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Fade from 'react-reveal/Fade';
+import telegram from './images/telegram.png'
+// import { FaTelegramPlane } from 'react-icons/fa';
 const About = () => {
+
+    window.addEventListener('scroll', function () {
+        const value = window.scrollY
+        const telegram = document.querySelector('.telegram')
+
+        // telegram.style.left = 'calc(-400px + ' + value * 0.9 + 'px)';
+        // telegram.style.bottom = 'calc(-760px + ' + value * 0.9 + 'px)';
+        // telegram.style.fontSize = 'calc(800px - ' + value * 0.5 + 'px)';
+
+        telegram.style.bottom = 'calc(-400px + ' + value * 1.5 + 'px)';
+
+
+
+    })
+
+
     return (
         <Wrapper id='about'>
-            <h2>About</h2>
+
+            <Fade bottom>
+                <h2>About</h2>
+            </Fade>
+
+            <div className='aboutSite'>
+                <div className='textLeft' >
+                    <p data-aos="fade-right">This is a simple site that uses codes from various places, but I used my own idea and changed to</p>
+                    <p data-aos="fade-right" data-aos-delay="50" >Various animations and javaScript are used here</p>
+                    <p data-aos="fade-right">This is text left Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, inventore! </p>
+                </div>
+                <div className='textRight'>
+                    <p data-aos="fade-left">Testing Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque distinctio qui </p>
+                    <p data-aos="fade-left" data-aos-delay="50">Here I used aos and react-reveal for animation</p>
+                    <p data-aos="fade-left">This is text right Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, excepturi?</p>
+                </div>
+                <img className='telegram' src={telegram} alt="TelegramIcon" />
+            </div>
+
+
+            <div className='aboutStyle' >
+                    <div className="rounds round1" data-aos='zoom-in-right' data-aos-delay="10">IT</div>
+                    <div className="rounds round2" data-aos='zoom-in-up' data-aos-delay="400">IS</div>
+                    <div className="rounds round3" data-aos='zoom-in-up' data-aos-delay="100">Style</div>
+                    <div className="rounds roundCenter" data-aos='zoom-in-up' data-aos-delay="800"></div>
+                    <div className='MirrorContainer' data-aos="zoom-in" data-aos-delay="600"  >
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing  architecto vero quia provident beatae perspiciatis dolorum est labore, consequuntur numquam. Ut, voluptates laudantium autem tempora sunt ex ea vero consequuntur!</p>
+                    </div>
+            </div>
+
         </Wrapper>
     );
 }
@@ -12,23 +59,148 @@ const About = () => {
 export default About;
 const Wrapper = styled.section`
 width: 100%;
-height: 800px;
 z-index: 2;
-display: flex;
-align-items: center;
-justify-content: center;
 background: #131121;
+color: white;
+overflow: hidden;
+position: relative;
+padding: 100px 100px 150px 100px;
 
-&::before{
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to top, #131121,transparent);
-    z-index: 10;
-}
+    h2{
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Kanit', sans-serif;
+    }
+    .aboutSite{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        padding: 195px 0 0 0;
+        z-index: 1;
+            div{
+                width: 40%;
+                font-family: sans-serif;
+                font-size: 36px;
+                letter-spacing: 2px;
+                p:nth-child(2){margin-top: 40px;}
+                p:nth-child(3){margin-top: 150px;}
+            }
+            .textLeft{text-align: end;}
 
+            .telegram{
+                position: absolute;
+                color: white;
+                left: 48%;
+                height: 300px;
+                transform: rotate(316deg) translateX(-50%);
+                z-index: -1;
+            }
+    }
 
+    .aboutStyle{
+        width: 100%;
+        height: 1000px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 300px;
+            
+            .MirrorContainer{
+                width: 700px;
+                height: 650px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                z-index: 1;
+                
+                background-color: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.4);
+                box-shadow: 0px 6px 20px rgb(255 255 255 / 39%);
+                border-right: 1px solid rgba(255,255,255,0.2);
+                border-bottom:1px solid rgba(255,255,255,0.2);
+                backdrop-filter: blur(25px);
+                border-radius: 10px;
+
+                p{
+                    width: 50%;
+                    text-align: center;
+                    font-family: 'Kanit', sans-serif;
+
+                }
+            }
     
+            .rounds{
+                width: 320px;
+                height: 320px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+                font-family: 'Kanit', sans-serif;
+                position: absolute;
+                border-radius: 50%;
+                letter-spacing: 3px;
+                    &::before{filter: blur(30px);}
+                    &::before,::after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        z-index: -1;
+                    }
+            }
+
+            .round1{
+                top: 100px;
+                left: 5%;
+                color: yellow;
+                &::before,::after{background: #00e4ff; animation: round2Animate 8s linear infinite;}
+            }
+            .round2{
+                top: 200px;
+                right: 100px;
+                color: #00ff19;
+                &::before,::after{background:#1900a6;animation: round2Animate 9s linear infinite;}
+            }
+            .round3{
+                left: 30%;
+                bottom: -100px;
+                color: #ff00ca;
+                &::before,::after{background: #00ff19; animation: round2Animate 7s linear infinite;}
+            }
+            .roundCenter{
+                width: 350px;
+                height: 350px;
+                top: 250px;
+                left: 39%;
+                color: yellow;
+                &::before,::after{background: #ff9100; animation: round2Animate 8s linear infinite;}
+            }
+         
+    }  
+
+    @keyframes round2Animate {
+        0%,100%{border-radius:50% 50% 50% 50% / 50% 50% 50% 50% ;}
+        10%{border-radius:61% 39% 50% 50% / 50% 50% 50% 50% ;}
+        20%{border-radius:51% 49% 50% 50% / 50% 63% 38% 50% ;}
+        30%{border-radius:51% 49% 63% 39% / 50% 50% 50% 50% ;}
+        40%{border-radius:51% 49% 50% 50% / 38% 50% 50% 62% ;}
+        50%{border-radius:62% 38% 50% 50% / 50% 50% 50% 50% ;}
+        60%{border-radius:50% 50% 50% 50% / 50% 63% 38% 50% ;}
+        70%{border-radius:50% 50% 63% 39% / 50% 50% 50% 50% ;}
+        80%{border-radius:50% 50% 50% 50% / 40% 50% 50% 60% ;}
+    }
+@media (max-width:768px) {
+   .textContainer{
+    p{
+        font-size: 27px;
+        line-height: 36px;
+    }
+   }
+}
 `

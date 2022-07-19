@@ -15,7 +15,14 @@ height: 800px;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: blue;
+background: #131121;
+color: white;
+
+    h2{
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Kanit', sans-serif;
+    }
 
     
 `

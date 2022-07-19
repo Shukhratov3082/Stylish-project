@@ -42,11 +42,11 @@ footer{
     justify-content: space-between;
     transform: translateX(-50%);
     gap: 0.8rem;
-    background-color: rgba(0,0,0,0.3);
+    background-color:rgb(255 255 255 / 18%);
     border-radius: 3rem;
     backdrop-filter: blur(15px);
     bottom: -4rem;
-    z-index: 10;
+    z-index: 20;
     
     a{
         width: 30px;
@@ -56,7 +56,6 @@ footer{
            transition:  .3s cubic-bezier(0.42, 0, 0.38, 1.53);
            font-size: 30px;
            color: #fcfcfc;
-         
           &:hover{
             transform: translateY(-6px);
           }
@@ -64,15 +63,9 @@ footer{
             filter: blur(2px);
           }
         }
-
-    }
-   
-    
+    }   
 }
-    .FootShow{
-            bottom: 2rem;
-            
-    }
-
-
+.FootShow{
+    bottom: 2rem;
+}
 `

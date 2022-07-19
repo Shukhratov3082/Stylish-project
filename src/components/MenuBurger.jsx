@@ -8,7 +8,7 @@ const MenuBurger = () => {
     const [menu_class, setMenuClass] = useState('menu hidden')
     const [isMenuClicked, setIsMenuClicked] = useState(true)
 
-    function upDateMenu  () {
+    function upDateMenu() {
         if (isMenuClicked) {
             setBurgerClass('burger-bar clicked')
             setMenuClass('menu visible')
@@ -21,14 +21,14 @@ const MenuBurger = () => {
     }
     return (
         <Wrapper >
-           
-                <div className='burger-menu' onClick={upDateMenu}>
-                    <div className={burger_class} ></div>
-                    <div className={burger_class} ></div>
-                    <div className={burger_class} ></div>
 
-                </div>
-        
+            <div className='burger-menu' onClick={upDateMenu}>
+                <div className={burger_class} ></div>
+                <div className={burger_class} ></div>
+                <div className={burger_class} ></div>
+
+            </div>
+
             <div className={menu_class}>
                 <nav>
                     <NavLinks className={'NavLinks'} to={'/'}>Home</NavLinks>
@@ -53,9 +53,9 @@ const Wrapper = styled.div`
         transition: cubic-bezier(0.175,0.885,0.32,1.1275) 0.5s;
     }
     .menu{
-        width: 400px;
+        width: 300px;
         height: 100vh;
-        padding: 40px 40px;
+        padding: 10px 10px;
         position: absolute;
         top: 0;
         left: 0;
@@ -64,14 +64,15 @@ const Wrapper = styled.div`
         background-color: #032141;
 
         nav{
-        width: 100%;
-        height: 100%;
-        background-color: #051c34;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: #051c34;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            gap: 30px;
      }
      
     }
