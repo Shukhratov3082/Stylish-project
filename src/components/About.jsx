@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import telegram from './images/telegram.png'
-// import { FaTelegramPlane } from 'react-icons/fa';
 const About = () => {
 
     window.addEventListener('scroll', function () {
