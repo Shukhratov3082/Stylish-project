@@ -191,6 +191,45 @@ padding: 100px 100px 150px 100px;
         70%{border-radius:50% 50% 63% 39% / 50% 50% 50% 50% ;}
         80%{border-radius:50% 50% 50% 50% / 40% 50% 50% 60% ;}
     }
+
+@media (max-width:1490px) {
+    h2{
+        font-size: 42px;
+    }
+    .aboutSite{
+        div{
+            font-size: 31px;
+        }
+        .telegram{
+            height: 230px;
+            left: 48%;
+        }
+    }
+    .aboutStyle{
+        margin-top: 190px;
+        .MirrorContainer{
+            width: 680px;
+            height: 610px;
+            font-size: 25px;
+        }
+        .rounds{
+            width: 300px;
+            height: 300px;
+            font-size: 36px;
+        }
+        .round2{right: 65px;}
+        .round3{bottom: -50px;}
+        .roundCenter{
+            width: 310px;
+            height: 310px;
+            top: 320px;
+            left: 36%;
+        }
+
+    }
+        
+}
+
 @media (max-width:768px) {
    .textContainer{
     p{

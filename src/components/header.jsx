@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import MenuBurger from "./MenuBurger";
-
+import './Home'
 
 const Header = () => {
     const [activeNav, setActiveNav] = useState('')
@@ -13,20 +13,36 @@ const Header = () => {
     // })
 
 
+    useEffect(() => {
+        const links = document.querySelectorAll('#links')
+        const all = document.querySelectorAll('section')
+
+        function activeMenu() {
+            let len = all.length;
+            while (--len && window.scrollY + 100 < all[len].offsetTop) { }
+            links.forEach(l => l.classList.remove('active'))
+            links[len].classList.add('active')
+        }
+        activeMenu()
+        window.addEventListener('scroll', activeMenu)
+    }, [])
+
+
+
 
 
 
 
     return (
         <Wrapper>
-                <div className="borderGradiend">
-                    <h1 data-aos="fade-top" className="Logo">Shukhratov</h1>
-                </div>
-                <nav className="navContainer"  data-aos="fade-bottom">
-                    <a href={'#home'} onClick={() => setActiveNav('#home')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
-                    <a href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
-                    <a href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
-                </nav>
+            <div className="borderGradiend">
+                <h1 data-aos="fade-top" className="Logo">Shukhratov</h1>
+            </div>
+            <nav className="navContainer" data-aos="fade-bottom">
+                <a id="links" href={'#home'} onClick={() => setActiveNav('#home')} className={activeNav === '#home' ? 'active' : ''}>Home</a>
+                <a id="links" href={'#about'} onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}>About</a>
+                <a id="links" href={'#code'} onClick={() => setActiveNav('#code')} className={activeNav === '#code' ? 'active' : ''}>Code</a>
+            </nav>
             <MenuBurger />
 
         </Wrapper>
@@ -88,14 +104,21 @@ const Wrapper = styled.header`
             height: 100%;
             cursor: pointer;
             border-radius: 20px;
-     &.active{
-         color: #01afff;
-         background: linear-gradient(180deg,rgba(255,255,255,0) 80%,rgb(9 106 246 / 40%) 99%);
-         border-bottom: 2px solid #001cee;            
-     } 
-     &:hover{
-        transform: translateY(-2px);
-     }
+                &.active{
+                    color: #01afff;
+                    background: linear-gradient(180deg,rgba(255,255,255,0) 80%,rgb(9 106 246 / 40%) 99%);
+                    border-bottom: 2px solid #001cee;            
+                } 
+                &:hover{
+                    transform: translateY(-2px);
+                }
+        }
+    }
+    @media (max-width:1490px){
+        .borderGradiend{
+            .Logo{
+                font-size: 35px;
+            }
         }
     }
     @media (max-width:768px) {

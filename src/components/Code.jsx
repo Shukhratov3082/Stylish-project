@@ -9,7 +9,7 @@ const Code = () => {
 }
 
 export default Code;
-const Wrapper = styled.div`
+const Wrapper = styled.section`
 width: 100%;
 height: 800px;
 display: flex;
