@@ -4,6 +4,7 @@ const Code = () => {
     return (
         <Wrapper id='code'>
             <h2>Code</h2>
+
         </Wrapper>
     );
 }
@@ -16,12 +17,24 @@ display: flex;
 align-items: center;
 justify-content: center;
 background: #131121;
+border-top: #131121;
 color: white;
 
     h2{
         text-align: center;
         font-size: 50px;
         font-family: 'Kanit', sans-serif;
+    }
+    .s{
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        justify-content: center;
+
     }
 
     

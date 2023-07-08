@@ -63,7 +63,7 @@ const Wrapper = styled.header`
     left: 0;
     padding: 20px 50px 20px 50px;
     font-family: "Coda Caption", sans-serif;;
-    
+    scroll-behavior: smooth;
     .borderGradiend{
         width: 275px;
         height: 85px;
