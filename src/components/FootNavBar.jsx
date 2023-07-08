@@ -9,14 +9,12 @@ import './About';
 
 const FootNavBar = () => {
     const [activeNav, setActiveNav] = useState('')
-z
     useEffect(() => {
         const links = document.querySelectorAll('#FootLinks')
         const all = document.querySelectorAll('section')
 
         function activeMenu() {
             let len = all.length;
-
             while (--len && window.scrollY + 300 < all[len].offsetTop) { }
             links.forEach(l => l.classList.remove('active'))
             links[len].classList.add('active')
@@ -29,7 +27,6 @@ z
         const header = document.querySelector('footer');
         header.classList.toggle('FootShow', window.scrollY > 80);
     })
-
     return (
         <Wrapper >
             <footer>

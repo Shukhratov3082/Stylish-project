@@ -6,40 +6,38 @@ const About = () => {
     window.addEventListener('scroll', function () {
         const value = window.scrollY
         const telegram = document.querySelector('.telegram')
-
         // telegram.style.left = 'calc(-400px + ' + value * 0.9 + 'px)';
         // telegram.style.bottom = 'calc(-760px + ' + value * 0.9 + 'px)';
         // telegram.style.fontSize = 'calc(800px - ' + value * 0.5 + 'px)';
-
         telegram.style.bottom = 'calc(-400px + ' + value * 1.5 + 'px)';
     })
 
-    useEffect(()=>{
+    useEffect(() => {
         const mirror = document.querySelector('.MirrorContainer')
         const aboutStyle = document.querySelector(".aboutStyle");
 
-        
-    aboutStyle.addEventListener('mousemove', (e) => {
-        let xAxis = (window.innerWidth  - e.pageX) / 130;
-        let yAxis = (window.innerHeight  - e.pageY) / 130;
-        // console.log('k',xAxis,yAxis);
-        mirror.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-      });
-      aboutStyle.addEventListener("mouseenter", (e) => {
-        mirror.style.transition = "none";
-      });
-      aboutStyle.addEventListener("mouseleave", (e) => {
-        mirror.style.transition = "all 0.5s ease";
-        mirror.style.transform = `rotateY(0deg) rotateX(0deg)`;
-      });
+
+        aboutStyle.addEventListener('mousemove', (e) => {
+            let xAxis = (window.innerWidth - e.pageX) / 130;
+            let yAxis = (window.innerHeight - e.pageY) / 130;
+            // console.log('k',xAxis,yAxis);
+            mirror.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        aboutStyle.addEventListener("mouseenter", (e) => {
+            mirror.style.transition = "none";
+        });
+        aboutStyle.addEventListener("mouseleave", (e) => {
+            mirror.style.transition = "all 0.5s ease";
+            mirror.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
     })
-    
+
 
 
     return (
         <Wrapper id='about'>
 
-                <h2 data-aos="fade-top">About</h2>
+            <h2 data-aos="fade-top">About</h2>
 
             <div className='aboutSite'>
                 <div className='textLeft' >
@@ -57,13 +55,13 @@ const About = () => {
 
 
             <div className='aboutStyle' >
-                    <div className="rounds round1" data-aos='zoom-in-right' data-aos-delay="10">IT</div>
-                    <div className="rounds round2" data-aos='zoom-in-up' data-aos-delay="400">IS</div>
-                    <div className="rounds round3" data-aos='zoom-in-up' data-aos-delay="100">Style</div>
-                    <div className="rounds roundCenter" data-aos='zoom-in-up' data-aos-delay="800"></div>
-                    <div className='MirrorContainer' data-aos="zoom-in" data-aos-delay="600"  >
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing  architecto vero quia provident beatae perspiciatis dolorum est labore, consequuntur numquam. Ut, voluptates laudantium autem tempora!</p>
-                    </div>
+                <div className="rounds round1" data-aos='zoom-in-right' data-aos-delay="10">IT</div>
+                <div className="rounds round2" data-aos='zoom-in-up' data-aos-delay="400">IS</div>
+                <div className="rounds round3" data-aos='zoom-in-up' data-aos-delay="100">Style</div>
+                <div className="rounds roundCenter" data-aos='zoom-in-up' data-aos-delay="800"></div>
+                <div className='MirrorContainer' data-aos="zoom-in" data-aos-delay="600"  >
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing  architecto vero quia provident beatae perspiciatis dolorum est labore, consequuntur numquam. Ut, voluptates laudantium autem tempora!</p>
+                </div>
             </div>
 
         </Wrapper>
@@ -250,11 +248,53 @@ padding: 100px 100px 150px 100px;
 }
 
 @media (max-width:768px) {
-   .textContainer{
-    p{
-        font-size: 27px;
-        line-height: 36px;
+    padding: 100px 70px 150px 70px;
+   .aboutSite{
+    div{
+        letter-spacing: 1;
     }
+    .telegram{
+        height: 125px;
+        left: 45%;
+    }
+    p{
+        font-size: 19px;
+        line-height: 24px;
+        font-size: 19px;
+         backdrop-filter: blur(8px);
+         padding: 10px;
+         border-radius: 31px;
+    }
+  
    }
+   .aboutStyle{
+    .MirrorContainer{
+        width: auto;
+        font-size: 16px;
+    }
+    .round1{
+        width: 260px;
+        height: 260px;
+        top: 45px;
+        left: 95px;
+    }
+   .round2{
+        width: 270px;
+        height: 270px;
+        right: 168px;
+        top: 355px;
+    }
+    .roundCenter{
+        width: 220px;
+        height: 220px;
+        top: 427px;
+        left: 9%;
+    }
+    .round3{
+        width: 260px;
+        height: 260px;
+        bottom: 30px;
+    }
+}
 }
 `
