@@ -6,6 +6,7 @@ import Header from './components/header';
 import FootNavBar from './components/FootNavBar';
 import styled from 'styled-components';
 
+
 function App() {
   return (
     <Wrapper>

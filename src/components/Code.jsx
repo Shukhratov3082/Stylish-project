@@ -4,7 +4,11 @@ const Code = () => {
     return (
         <Wrapper id='code'>
             <h2>Code</h2>
-
+            <div className='s'>
+                <div>1d</div>
+                <div>2100%d</div>
+                <div>3d</div>
+            </div>
         </Wrapper>
     );
 }
@@ -17,7 +21,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 background: #131121;
-border-top: #131121;
 color: white;
 
     h2{
@@ -34,7 +37,13 @@ color: white;
         scroll-snap-type: x mandatory;
         overflow-x: scroll;
         justify-content: center;
-
+        div{
+            width: 460px;
+            height: 100%;
+            background-color: red;
+            flex: none;
+            scroll-snap-align: start;
+        }
     }
 
     

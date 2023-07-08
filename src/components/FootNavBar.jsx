@@ -9,7 +9,7 @@ import './About';
 
 const FootNavBar = () => {
     const [activeNav, setActiveNav] = useState('')
-
+z
     useEffect(() => {
         const links = document.querySelectorAll('#FootLinks')
         const all = document.querySelectorAll('section')
